@@ -1,4 +1,7 @@
 @import "~normalize.css";
+@import "header";
+@import "sidebar";
+@import "invoice-table";
 
 html
 {
@@ -47,4 +50,22 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: #f5f1fc;;
+}
+
+.home-page {
+  display: flex;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+
+  margin: 0 30px;
 }

@@ -1,0 +1,50 @@
+@import "~normalize.css";
+
+html
+{
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+*,
+*::before,
+*::after
+{
+  box-sizing: inherit;
+}
+
+body
+{
+  line-height: normal;
+  min-width: 320px;
+
+  margin: 0;
+
+  color: #000;
+  background-color: #fff;
+}
+
+body.modal-active
+{
+  overflow: hidden;
+}
+
+img
+{
+  max-width: 100%;
+}
+
+a
+{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}

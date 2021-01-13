@@ -53,19 +53,14 @@ li {
 }
 
 .App {
+  display: flex;
   min-height: 100vh;
   background-color: #f5f1fc;;
-}
-
-.home-page {
-  display: flex;
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
-
-  flex-grow: 1;
-
-  margin: 0 30px;
+  flex: 1 1 80%;
+  width: 80%;
 }

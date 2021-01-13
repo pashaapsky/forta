@@ -5,9 +5,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import Sidebar from "../components/Sidebar";
 
-const HeaderContainer = ({isOpenSidebar, toggleSidebar}) => {
+const HeaderContainer = () => {
     const [isOpenCompany, setIsOpenCompany] = useState(false);
 
     const toggleCompany = () => {
@@ -17,15 +16,9 @@ const HeaderContainer = ({isOpenSidebar, toggleSidebar}) => {
     return (
         <Fragment>
             <Header>
-                {!isOpenSidebar ? (
-                    <button className="toggle-nav-btn" onClick={toggleSidebar}>
-                        <MenuIcon  />
-                    </button>
-                ) : (
-                    <button className="toggle-nav-btn" onClick={toggleSidebar}>
-                        <CloseIcon />
-                    </button>
-                )}
+                <button className="toggle-nav-btn">
+                    <MenuIcon/>
+                </button>
 
                 <HeaderGroup>
                     <HeaderItem>
@@ -39,7 +32,8 @@ const HeaderContainer = ({isOpenSidebar, toggleSidebar}) => {
 
                     <HeaderItem>
                         Мегабит
-                        {!isOpenCompany ? <ExpandMoreIcon className="arrow-icon" onClick={toggleCompany}/> : <ExpandLessIcon className="arrow-icon" onClick={toggleCompany}/>}
+                        {!isOpenCompany ? <ExpandMoreIcon className="arrow-icon" onClick={toggleCompany}/> :
+                            <ExpandLessIcon className="arrow-icon" onClick={toggleCompany}/>}
                     </HeaderItem>
                 </HeaderGroup>
             </Header>

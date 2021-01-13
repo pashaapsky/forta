@@ -34,7 +34,7 @@ const InvoiceTableContainer = () => {
             id: 2,
             number: 123123,
             date: "12.12.2020",
-            projectName: 'ООО "Солнышко"',
+            projectName: 'ООО "Рога и копыта"',
             orderPrice: "3000.00 руб",
             email: "radmir@hmai.com",
             paymentPrice: '2100.00 руб',
@@ -50,7 +50,7 @@ const InvoiceTableContainer = () => {
             id: 3,
             number: 123123,
             date: "12.12.2020",
-            projectName: 'ООО "Солнышко"',
+            projectName: 'ООО "Что то очень длинное длинное длинное"',
             orderPrice: "3000.00 руб",
             email: "radmir@hmai.com",
             paymentPrice: '2100.00 руб',
@@ -66,23 +66,24 @@ const InvoiceTableContainer = () => {
 
     return (
         <InvoiceTable>
-            <InvoiceTableHeaders>
-                <ArrowForwardIosIcon/>
-                <InvoiceTableHeaderItem title="Номер" SortIcon={ArrowDropDownIcon} className="number"/>
-                <InvoiceTableHeaderItem title="Дата" SortIcon={ArrowDropDownIcon} className="date"/>
-                <InvoiceTableHeaderItem title="Проект" className="project"/>
-                <InvoiceTableHeaderItem title="Сумма заказа" SortIcon={ArrowDropDownIcon} className="order-price"/>
-                <InvoiceTableHeaderItem title="Плательщик" className="email"/>
-                <InvoiceTableHeaderItem title="Сумма оплаты" className="payment-price"/>
-                <InvoiceTableHeaderItem title="Статус" className="status"/>
-                <MoreVertIcon />
-            </InvoiceTableHeaders>
+            <div className="container">
+                <InvoiceTableHeaders>
+                    <InvoiceTableHeaderItem />
+                    <InvoiceTableHeaderItem title="Номер" SortIcon={ArrowDropDownIcon} className="number"/>
+                    <InvoiceTableHeaderItem title="Дата" SortIcon={ArrowDropDownIcon} className="date"/>
+                    <InvoiceTableHeaderItem title="Проект" className="project"/>
+                    <InvoiceTableHeaderItem title="Сумма заказа" SortIcon={ArrowDropDownIcon} className="order-price"/>
+                    <InvoiceTableHeaderItem title="Плательщик" className="email"/>
+                    <InvoiceTableHeaderItem title="Сумма оплаты" className="payment-price"/>
+                    <InvoiceTableHeaderItem title="Статус" className="status"/>
+                </InvoiceTableHeaders>
 
-            {items.map(item => (
-                <InvoiceTableItem item={item}>
-                    <InvoiceTableItemDropdown item={item}/>
-                </InvoiceTableItem>
-            ))}
+                {items.map(item => (
+                    <InvoiceTableItem item={item}>
+                        <InvoiceTableItemDropdown item={item}/>
+                    </InvoiceTableItem>
+                ))}
+            </div>
         </InvoiceTable>
     );
 };

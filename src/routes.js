@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Orders from "./pages/Orders";
 import Payments from "./pages/Payments";
 import Purses from "./pages/Purses";
+import InvoiceDetail from "./pages/InvoiceDetail";
 
 export const Routes = () => {
     return (
@@ -11,6 +12,10 @@ export const Routes = () => {
             <Switch>
                 <Route exact path="/">
                     <Home />
+                </Route>
+
+                <Route exact path="/invoices/:id">
+                    <InvoiceDetail />
                 </Route>
 
                 <Route exact path="/payments">

@@ -8,11 +8,11 @@ const Home = () => {
         <Fragment>
             <Sidebar />
 
-            <div className="main-content">
-                <HeaderContainer />
+            <HeaderContainer />
 
+            <main className="main">
                 <InvoiceTableContainer/>
-            </div>
+            </main>
         </Fragment>
     );
 };

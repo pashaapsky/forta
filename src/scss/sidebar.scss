@@ -1,6 +1,10 @@
 .sidebar {
-  flex: 0 0 auto;
-  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: $sidebar-width;
   height: 100vh;
 
   background-color: #7f1fd7;

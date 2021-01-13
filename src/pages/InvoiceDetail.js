@@ -15,11 +15,11 @@ const InvoiceDetail = () => {
         <Fragment>
             <Sidebar/>
 
-            <div className="main-content">
-                <HeaderContainer/>
+            <HeaderContainer/>
 
+            <main className="main">
                 <InvoiceDetailContainer item={item}/>
-            </div>
+            </main>
         </Fragment>
 
     );

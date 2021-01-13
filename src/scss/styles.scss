@@ -1,11 +1,8 @@
 @import "~normalize.css";
-@import "header";
-@import "sidebar";
-@import "invoice-table";
+@import "variables";
 
 html
 {
-  box-sizing: border-box;
   font-size: 15px;
 }
 
@@ -13,7 +10,7 @@ html
 *::before,
 *::after
 {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body
@@ -53,14 +50,17 @@ li {
 }
 
 .App {
-  display: flex;
+  background-color: $bg-color;
   min-height: 100vh;
-  background-color: #f5f1fc;;
+  overflow: hidden;
 }
 
-.main-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 80%;
-  width: 80%;
+.main {
+  padding-left: $sidebar-width;
+  margin-top: calc(10px + #{$header-height});
 }
+
+@import "header";
+@import "sidebar";
+@import "invoice-table";
+@import "invoice-detail";

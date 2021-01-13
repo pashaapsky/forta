@@ -1,10 +1,24 @@
 .header {
+  width: calc(100% - #{$sidebar-width});
+  height: $header-height;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  z-index: 1000;
+
+  background-color: $bg-color;
+
   &__container {
+    margin: 0 auto;
+    padding: 0 $header-padding-x;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 30px 20px;
+    height: 100%;
   }
 
   &__group {

@@ -12,15 +12,19 @@ export const InvoiceDetail = ({children}) => {
 
 export const InvoiceDetailGroup = ({children}) => {
     return (
-        <div className="invoice-detail__group">
+        <div className="invoice-detail__group-block">
             {children}
         </div>
     );
 };
 
-export const InvoiceDetailBlock = ({children}) => {
+export const InvoiceDetailBlock = ({children, operation, column, id}) => {
+
     return (
-        <div className="invoice-detail__block">
+        <div
+            className={`invoice-detail__block ${column ? "invoice-detail__block--column" : ""} ${operation ? "invoice-detail__operation" : ""}`}
+            id={id ? id : ""}
+        >
             {children}
         </div>
     );

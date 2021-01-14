@@ -192,6 +192,11 @@
 
   z-index: 100;
 
+  &:last-of-type {
+    top: 0;
+    right: 25px;
+  }
+
   &__item {
     text-align: left;
     padding: 5px;

@@ -60,6 +60,15 @@ li {
   margin-top: calc(10px + #{$header-height});
 }
 
+.btn {
+  &--blue {
+    background-color: #5ee2ff;
+  }
+  &--green {
+    background-color: #00ca61;
+  }
+}
+
 @import "header";
 @import "sidebar";
 @import "invoice-table";

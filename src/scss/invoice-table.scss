@@ -1,6 +1,4 @@
 .invoice-table {
-  padding-left: calc(#{$header-padding-x} + 10px);
-  padding-right: calc(#{$header-padding-x} + 10px);
   overflow-x: auto;
 
   &__container {
@@ -39,6 +37,13 @@
   &__block {
     position: relative;
     margin: 0 -10px;
+
+    &:last-of-type {
+      .item-menu {
+        top: 0;
+        right: 35px;
+      }
+    }
   }
 
   &__block.open {
@@ -191,11 +196,6 @@
   border: 1px solid rgba(0,0,0, 0.1);
 
   z-index: 100;
-
-  &:last-of-type {
-    top: 0;
-    right: 25px;
-  }
 
   &__item {
     text-align: left;

@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 const Sidebar = () => {
     return (
         <aside className="sidebar">
-            <h1 className="sidebar__header">x 100</h1>
+            <h1 className="sidebar__header">Tech Play</h1>
 
             <nav className="navbar">
                 <ul className="navbar-menu">

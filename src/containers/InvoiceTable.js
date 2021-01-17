@@ -1,11 +1,10 @@
 import React from 'react';
 import {
-    InvoiceTable,
-    InvoiceTableHeaderItem,
-    InvoiceTableHeaders,
-    InvoiceTableItem,
-    InvoiceTableItemDropdown
-} from "../components/InvoiceTable";
+    Table,
+    TableHeaderItem,
+    InvoicesItem,
+    InvoicesItemDropdown
+} from "../components/Table";
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowForwardIosIcon from "@material-ui/core/SvgIcon/SvgIcon";
@@ -65,26 +64,33 @@ const InvoiceTableContainer = () => {
     ];
 
     return (
-        <InvoiceTable>
-            <div className="container">
-                <InvoiceTableHeaders>
-                    <InvoiceTableHeaderItem />
-                    <InvoiceTableHeaderItem title="Номер" SortIcon={ArrowDropDownIcon} className="number"/>
-                    <InvoiceTableHeaderItem title="Дата" SortIcon={ArrowDropDownIcon} className="date"/>
-                    <InvoiceTableHeaderItem title="Проект" className="project"/>
-                    <InvoiceTableHeaderItem title="Сумма заказа" SortIcon={ArrowDropDownIcon} className="order-price"/>
-                    <InvoiceTableHeaderItem title="Плательщик" className="email"/>
-                    <InvoiceTableHeaderItem title="Сумма оплаты" className="payment-price"/>
-                    <InvoiceTableHeaderItem title="Статус" className="status"/>
-                </InvoiceTableHeaders>
+        <Table>
+            <h1 className="table__title">Таблица инвойсов</h1>
+
+            <span className="table__subtitle">Результаты</span>
+
+
+            <div className="table__group">
+
+                <div className="table__item">
+                    <TableHeaderItem title="Номер" SortIcon={ArrowDropDownIcon}/>
+                    <TableHeaderItem title="Дата" SortIcon={ArrowDropDownIcon}/>
+                    <TableHeaderItem title="Проект" className="project"/>
+                    <TableHeaderItem title="Сумма заказа" SortIcon={ArrowDropDownIcon} c/>
+                    <TableHeaderItem title="Плательщик"/>
+                    <TableHeaderItem title="Сумма оплаты"/>
+                    <TableHeaderItem title="Статус"/>
+                </div>
 
                 {items.map(item => (
-                    <InvoiceTableItem item={item}>
-                        <InvoiceTableItemDropdown item={item}/>
-                    </InvoiceTableItem>
+
+                    <InvoicesItem item={item}>
+                        {/*<InvoicesItemDropdown item={item}/>*/}
+                    </InvoicesItem>
+
                 ))}
             </div>
-        </InvoiceTable>
+        </Table>
     );
 };
 

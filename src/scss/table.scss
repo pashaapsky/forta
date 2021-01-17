@@ -1,4 +1,4 @@
-.invoice-table {
+.table {
   overflow-x: auto;
 
   &__container {
@@ -25,61 +25,27 @@
     padding-left: 2px;
   }
 
+  &__group {
+    padding: 0 30px;
+  }
+
+  &__item {
+    display: flex;
+
+    margin-bottom: 15px;
+  }
+
   &__headers {
     display: flex;
-    align-items: center;
-
-    font-weight: bold;
-
-    margin: 0 20px 40px;
-  }
-
-  &__block {
-    position: relative;
-    margin: 0 -10px;
-
-    &:last-of-type {
-      .item-menu {
-        top: 0;
-        right: 35px;
-      }
-    }
-  }
-
-  &__block.open {
-    border-radius: 20px;
-    background-color: #d4b2f3;;
   }
 
   &__header {
+    flex: 0 1 15%;
     display: flex;
     align-items: center;
 
     svg {
       cursor: pointer;
-    }
-  }
-
-  &__group {
-    display: flex;
-    align-items: center;
-
-    padding: 10px;
-    border-radius: 20px;
-
-    &:hover {
-      background-color: #d4b2f3;;
-    }
-
-    .arrow-btn {
-      font-size: 14px;
-      margin-right: 8px;
-
-      &--large {
-        font-size: 20px;
-
-        margin-right: 2px;
-      }
     }
   }
 
@@ -99,36 +65,7 @@
     }
   }
 
-  &__item, &__header {
-    &:nth-child(2) {
-      width: 100px;
-    }
 
-    &:nth-child(3) {
-      width: 100px;
-    }
-
-    &:nth-child(4) {
-      width: 200px;
-    }
-
-    &:nth-child(5) {
-      width: 150px;
-    }
-
-    &:nth-child(6) {
-      width: 150px;
-    }
-
-    &:nth-child(7) {
-      width: 150px;
-    }
-
-    &:nth-child(8) {
-      width: 80px;
-      margin-right: 20px;
-    }
-  }
 }
 
 .dropdown {

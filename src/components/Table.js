@@ -4,13 +4,10 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-export const InvoiceTable = ({children}) => {
+export const Table = ({children}) => {
     return (
-        <section className="invoice-table">
-            <div className="invoice-table__container">
-                <h1 className="invoice-table__title">Таблица инвойсов</h1>
-                <span className="invoice-table__subtitle">Результаты</span>
-
+        <section className="table">
+            <div className="table__container">
                 {children}
             </div>
         </section>
@@ -18,24 +15,17 @@ export const InvoiceTable = ({children}) => {
 };
 
 
-export const InvoiceTableHeaders = ({children}) => {
+export const TableHeaderItem = ({SortIcon, title}) => {
     return (
-        <div className="invoice-table__headers">
-            {children}
-        </div>
-    );
-};
-
-export const InvoiceTableHeaderItem = ({SortIcon, className, title}) => {
-    return (
-        <div className={`invoice-table__header ${className}`}>
+        <div className="table__header">
             {title}
             {SortIcon && <SortIcon/>}
         </div>
     );
 };
 
-export const InvoiceTableItem = ({item, children}) => {
+
+export const InvoicesItem = ({item, children}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenMenu, setIsOpenMenu] = useState(false);
 
@@ -44,46 +34,46 @@ export const InvoiceTableItem = ({item, children}) => {
     };
 
     return (
-        <div className={`invoice-table__block ${isOpen ? "open" : ""}`}>
-            <div className="invoice-table__group">
+        <div className={`table__item invoice ${isOpen ? "open" : ""}`}>
+            <div className="invoice__items">
                 {!isOpen ? (
-                    <ArrowForwardIosIcon className="arrow-btn" onClick={toggleOpen}/>
+                    <ArrowForwardIosIcon className="invoice__expand arrow-btn" onClick={toggleOpen}/>
                 ) : (
-                    <ExpandLessIcon className="arrow-btn arrow-btn--large" onClick={toggleOpen}/>
+                    <ExpandLessIcon className="invoice__expand arrow-btn arrow-btn--large" onClick={toggleOpen}/>
                 )}
 
-                <div className="invoice-table__item">
+                <div className="invoice__item">
                     {item.number}
                 </div>
 
-                <div className="invoice-table__item">
+                <div className="invoice__item">
                     {item.date}
                 </div>
 
-                <div className="invoice-table__item">
+                <div className="invoice__item">
                     {item.projectName}
                 </div>
 
-                <div className="invoice-table__item">
+                <div className="invoice__item">
                     {item.orderPrice}
                 </div>
 
-                <div className="invoice-table__item">
+                <div className="invoice__item">
                     {item.email}
                 </div>
 
-                <div className="invoice-table__item">
+                <div className="invoice__item">
                     {item.paymentPrice}
                 </div>
 
-                <div className="invoice-table__item">
+                <div className="invoice__item">
                     <button className="status-btn status-btn--success">
                         {item.status}
                     </button>
                 </div>
 
                 <MoreVertIcon
-                    className="more-btn"
+                    className="invoice__extra-menu"
                     onClick={() => setIsOpenMenu(isOpenMenu => !isOpenMenu)}
                 />
             </div>
@@ -105,14 +95,13 @@ export const InvoiceTableItem = ({item, children}) => {
                 </div>
             )}
 
-
             {isOpen && children}
         </div>
     );
 };
 
 
-export const InvoiceTableItemDropdown = ({item, children}) => {
+export const InvoicesItemDropdown = ({item, children}) => {
     return (
         <div className={`dropdown`}>
             <div className="dropdown__group">

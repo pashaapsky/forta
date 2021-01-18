@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-import Home from "./pages/Home";
+import Acquiring from "./pages/Acquiring";
 import Orders from "./pages/Orders";
 import Payments from "./pages/Payments";
 import Purses from "./pages/Purses";
@@ -11,7 +11,7 @@ export const Routes = () => {
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Home />
+                    <Acquiring />
                 </Route>
 
                 <Route exact path="/invoices/:id">

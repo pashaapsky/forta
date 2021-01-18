@@ -1,0 +1,8 @@
+{
+  "realm": "TestAuth",
+  "auth-server-url": "https://keycloak.dev.xforta.com/auth/",
+  "ssl-required": "external",
+  "resource": "react-auth",
+  "public-client": true,
+  "confidential-port": 0
+}

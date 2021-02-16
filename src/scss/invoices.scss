@@ -1,0 +1,53 @@
+.invoice {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    flex: 0 1 15%;
+  }
+
+  &__expand {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__extra-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__headers {
+    display: flex;
+    align-items: center;
+
+    font-weight: bold;
+
+    margin: 0 20px 40px;
+  }
+
+  &__block {
+    position: relative;
+    margin: 0 -10px;
+
+    &:last-of-type {
+      .item-menu {
+        top: 0;
+        right: 35px;
+      }
+    }
+  }
+
+  &__block.open {
+    border-radius: 20px;
+    background-color: #d4b2f3;;
+  }
+}
+
